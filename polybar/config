@@ -13,20 +13,24 @@ i3-focused= ${xrdb:color4:#ffffff}
 i3-unfocused= ${xrdb:color8:#0000ff}
 i3-inactive= ${xrdb:color5:#ff00ff}
 i3-urgent = ${xrdb:color15:#000000}
+
 music = ${xrdb:color10:#00ff00}
 status = ${xrdb:color15:#ffffff}
 charging = #5acc77
 
-[bar/mybar]
+music-full = #5acc77
+music-empty = ${xrdb:color15}
+
+[bar/main]
 monitor = eDP1
 bottom = false
 fixed-center = true
 height = 25
 width = 100%
-separator = |
+separator = 
 modules-left = i3
-modules-center = mpd
-modules-right = wlan eth battery1 battery2 cpu date
+modules-center = mpd 
+modules-right = volume wlan eth battery1 battery2 cpu date powermenu
 locale = en_US.UTF-8
 tray-position = left
 tray-detached = false
@@ -36,11 +40,21 @@ border-bottom-size = 2
 background = ${colors.background}
 foreground = ${colors.status}
 
+module-margin-left = 1
+module-margin-right = 2
+
 font-0 = fixed
 font-1 = unifont:fontformat=truetype:size=8:weight=bold:antialias=false;0
 font-2 = Font Awesome 5 Free:style=Regular:pixelsize=12;0
 font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;0
 font-4 = Font Awesome 5 Brands:pixelsize=12;0
+
+[bar/vga]
+inherit = bar/main
+monitor = DP2
+modules-left = 
+module-right = 
+modules-center = i3
 
 [global/wm]
 margin-bottom = 5
@@ -80,7 +94,9 @@ label = %date% %time%
 [module/cpu]
 type = internal/cpu
 interval = 5
-label = "CPU %percentage:2%%"
+format-prefix = " "
+label = "%percentage:2%%"
+
 
 [module/wlan]
 type = internal/network
@@ -88,18 +104,14 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected = Wifi: %downspeed:9%
-
+label-connected = %downspeed%  %upspeed%
+format-connected-prefix = " "
 format-disconnected =
 
 [module/eth]
-type = internal/network
 interface = enp0s25
-interval = 3.0
-
-format-connected-underline = #55aa55
-label-connected = %local_ip% %downspeed:9%
-format-disconnected =
+inherit = module/wlan
+format-connected-prefix  =" "
 
 [module/i3]
 type = internal/i3
@@ -126,11 +138,38 @@ label-urgent-padding = 2
 type = internal/mpd
 host = 127.0.0.1
 
-format-online = <label-song> 
+format-online = <icon-prev> <toggle> <icon-next> <label-song> 
 label-song = %artist% - %title%
-format-online-foreground = ${colors.music}
+label-song-maxlen = 30
+label-song-ellipsis = true
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-prev = 
 
 format-offline = <label-offline>
-label-offline = mpd is offline
+label-offline = 
 
-; vim:ft=dosini
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume>
+format-muted = <label-muted>
+label-muted = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-foreground = #BB4249
+label-closed-foreground = ${module/powermenu.label-open-foreground}
+label-separator = " "
+format-spacing = 1
+
+menu-0-0 = Lock 
+menu-0-0-exec = i3lock -c 708090
+
+; vim:ft=dosini:fileencoding=utf-8

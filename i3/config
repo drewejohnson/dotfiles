@@ -26,7 +26,7 @@ bindsym $mod+Return exec st -f "SourceCodePro:size=10"
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -c ~/.config/rofi/config
+bindsym $mod+d exec --no-startup-id rofi -show run -c ~/.config/rofi/config.rasi
 
 # lock the screen
 bindsym $mod+x exec i3lock -c 708090
@@ -147,7 +147,6 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
