@@ -4,7 +4,7 @@
 cp -v ~/.vimrc .
 cp -v ~/.bashrc .
 cp -v ~/.bash_aliases .
-
+cp -v ~/.vimpcrc .
 CONF=${HOME}/.config
 cp -v $CONF/neofetch/config.conf neofetch/
 cp -v ${CONF}/i3/config i3/

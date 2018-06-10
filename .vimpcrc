@@ -1,0 +1,4 @@
+set windows lists,library,playlist
+set window library
+hi status blackbg
+hi tab blackbg
