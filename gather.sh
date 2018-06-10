@@ -13,4 +13,4 @@ cp -v ${CONF}/polybar/config polybar/
 cp -v ${CONF}/polybar/launch.sh polybar
 cp -v ${CONF}/rofi/config.rasi rofi/
 cp -v ${CONF}/rofi/rofi-dark.rasi rofi/
-
+cp -v ~/.ipython/profile_default/ipython_config.py ipython/profile_default
