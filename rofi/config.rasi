@@ -1,5 +1,5 @@
 configuration {
-modi: "window,run,ssh";
+modi: "window,run,ssh,combi";
 width: 50;
 lines: 15;
 columns: 1;
@@ -13,7 +13,7 @@ font: "mono 12";
 show-icons: true;
 terminal: "rofi-sensible-terminal";
 ssh-client: "ssh";
-ssh-command: "{terminal} -e {ssh-client} {host}";
+ssh-command: "uxterm -e {ssh-client} {host}";
 run-command: "{cmd}";
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
@@ -31,7 +31,7 @@ run-command: "{cmd}";
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
-/*	combi-modi: "window,run";*/
+	combi-modi: "ssh,run";
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/

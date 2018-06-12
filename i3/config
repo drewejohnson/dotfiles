@@ -20,13 +20,13 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -f "SourceCodePro:size=10"
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -c ~/.config/rofi/config.rasi
+bindsym $mod+d exec --no-startup-id rofi -show combi -c ~/.config/rofi/config.rasi
 
 # lock the screen
 bindsym $mod+x exec i3lock -c 708090
