@@ -133,6 +133,17 @@ let g:tex_fold_enabled = 1
 " }
 
 "                             File-type specific   {
+" LaTeX     {
+augroup ft_latex
+    au!
+    
+    " Build the document using rubber and generate a pdf
+    au FileType tex nnoremap <buffer> <localleader>1 :! rubber -d %<CR>
+
+augroup end
+
+" }
+
 " Python {
 augroup ft_python
     au!
