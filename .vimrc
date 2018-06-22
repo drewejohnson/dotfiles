@@ -6,7 +6,7 @@ set nocompatible
 set wildmenu
 set incsearch
 set showcmd
-colorscheme zellner
+colorscheme desert
 syntax on
 filetype off
 
