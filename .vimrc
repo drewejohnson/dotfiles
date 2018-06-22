@@ -102,18 +102,23 @@ au BufRead,BufNewFile *.py match BadWhitespace /\s+$/
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " file editing a. la. Steve Losh    {
-nnoremap <leader>ev :vsplit ~/.vimrc<CR>
+nnoremap <leader>ev :tabe ~/.vimrc<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
-nnoremap <leader>ei :vsplit ~/.config/i3/config<CR>
+nnoremap <leader>ei :tabe ~/.config/i3/config<CR>
 
 " }
 " fugitive  {
 
-nnoremap <leader>gs :Gstatus<CR>
+noremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gvd :Gvdiff<CR>
+nnoremap <leader>gdp :diffput<CR>
+nnoremap <leader>gdg :diffget<CR>
+vnoremap <leader>gdp :diffput<CR>
+vnoremap <leader>gdg :diffget<CR>
 
 " }
 " }
@@ -121,11 +126,10 @@ nnoremap <leader>gd :Gdiff<CR>
 "                                  folding      {
 nnoremap <Space> za
 vnoremap <Space> za
-"fast fold
+" fast fold {
 let g:tex_fold_enabled = 1
-" Simpylfold
-let g:SimpylFold_docstring_preview = 1
 
+" }
 " }
 
 "                             File-type specific   {
@@ -135,6 +139,8 @@ augroup ft_python
 
     au FileType python inoremap <buffer> <c-b> """"""<left><left><left>
     au FileType python nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
+    au FileType python nnoremap <buffer> <localleader>q :QuickRun<CR>
+    au FileType python vnoremap <buffer> <localleader>q :QuickRun<CR>
 
 augroup end
 
