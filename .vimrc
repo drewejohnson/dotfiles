@@ -161,6 +161,8 @@ augroup ft_python
     au FileType python nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
     au FileType python nnoremap <buffer> <localleader>q :QuickRun<CR>
     au FileType python vnoremap <buffer> <localleader>q :QuickRun<CR>
+    au InsertEnter *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+\%#\@!$/
+    au InsertLeave *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+$/
 
 augroup end
 
