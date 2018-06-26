@@ -6,7 +6,6 @@ set nocompatible
 set wildmenu
 set incsearch
 set showcmd
-colorscheme desert
 syntax on
 filetype off
 
@@ -27,8 +26,12 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
+set background=dark
+let g:gruvbox_contrast_dark = 'high'
+colorscheme gruvbox
 filetype plugin indent on
 
 set tabstop=4 expandtab softtabstop=0 shiftwidth=4 smarttab
