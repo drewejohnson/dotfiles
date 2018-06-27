@@ -158,7 +158,7 @@ augroup ft_python
     au!
 
     au FileType python inoremap <buffer> <c-b> """"""<left><left><left>
-    au FileType python nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
+    au FileType python nnoremap <buffer> <localleader>1 yypv$r-:redraw<cr>
     au FileType python nnoremap <buffer> <localleader>q :QuickRun<CR>
     au FileType python vnoremap <buffer> <localleader>q :QuickRun<CR>
 
