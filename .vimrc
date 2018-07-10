@@ -37,14 +37,31 @@ filetype plugin indent on
 
 set tabstop=4 expandtab softtabstop=0 shiftwidth=4 smarttab
 
+"                                 Functions         {
+
+function! <SID>StripTrailingWhitespaces()
+    " http://vimcasts.org/episodes/tidying-whitespace
+    " Prep - save last search and cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the thing
+    %s/\s\+$//e
+    " Clean up - restore search history and cursor position
+    let @/=_s
+    call cursor(l,c)
+endfunction
+
+"   }
+
 "                                Status line        {
 set laststatus=2
 set statusline=
-set statusline+=%-10.3n\         " buffer number 
+set statusline+=%-10.3n\         " buffer number
 set statusline+=%f\              " file name
 set statusline+=%h%m%r%w         " file types - help, modified, RO, preview
 set showtabline=2
-set noshowmode 
+set noshowmode
 
 " }
 
@@ -78,7 +95,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696
 
 function! NERDTreeHighlightFile(extension, fg, bg)
-    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg 
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg
     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
@@ -87,7 +104,7 @@ call NERDTreeHighlightFile('py', 'green', 'none')
 call NERDTreeHighlightFile('yaml', 'yellow', 'none')
 call NERDTreeHighlightFile('rst', 'blue', 'none')
 call NERDTreeHighlightFile('md', 'blue', 'none')
-        
+
 " }
 " }
 " bad white space    {
@@ -100,7 +117,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " }
 
-au BufRead,BufNewFile *.py match BadWhitespace /\s+$/
+au BufRead,BufNewFile *.py,*.tex match BadWhitespace /\s+$/
+au BufWritePre *.py,*.tex :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -109,6 +127,11 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
 nnoremap <leader>ei :tabe ~/.config/i3/config<CR>
+
+"   }
+
+" Kill all whitespace
+nnoremap <silent> <leader>kw :call <SID>StripTrailingWhitespaces()<CR>
 
 " }
 " fugitive  {
@@ -146,7 +169,7 @@ let g:tex_fold_enabled = 1
 " LaTeX     {
 augroup ft_latex
     au!
-    
+
     " Build the document using rubber and generate a pdf
     au FileType tex nnoremap <buffer> <localleader>1 :! rubber -d %<CR>
 
