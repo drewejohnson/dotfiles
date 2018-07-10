@@ -154,11 +154,6 @@ vnoremap <leader>gdg :diffget<CR>
 nnoremap <Space> za
 vnoremap <Space> za
 
-" coloring  {
-highlight Folded ctermbg=grey  ctermfg=black
-
-" }
-
 " fast fold {
 let g:tex_fold_enabled = 1
 
