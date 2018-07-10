@@ -1,12 +1,21 @@
 " my vimrc file
 "                              general settings     {
-set fileencoding=utf-8
+set fileencoding=utf=8
 set number
 set nocompatible
+set mousehide  " hide mouse after typeing
+set hlsearch
+set splitbelow
+set splitright
 set wildmenu
 set incsearch
 set showcmd
 syntax on
+
+" directories   {
+set directory=~/.vim/swap
+set backupdir=~/.vim/backups
+
 filetype off
 
 " }
