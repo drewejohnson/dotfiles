@@ -30,7 +30,7 @@ width = 100%
 separator = 
 modules-left = i3
 modules-center = mpd 
-modules-right = volume wlan eth battery1 battery2 cpu date powermenu
+modules-right = volume wlan eth polybat cpu date powermenu
 locale = en_US.UTF-8
 tray-position = left
 tray-detached = false
@@ -60,26 +60,10 @@ modules-center = i3
 margin-bottom = 5
 margin-top = 5
 
-[module/battery1]
-type = internal/battery
-full-at = 99
-battery = BAT0
-adapter = AC 
-poll-interval = 10
-format-charging =  <label-charging>
-format-discharging =  <label-discharging>
-format-charging-foreground= ${colors.charging}
-
-[module/battery2]
-type = internal/battery
-full-at = 99
-battery = BAT1
-adapter = AC 
-poll-interval = 10
-
-format-charging =  <label-charging>
-format-discharging =  <label-discharging>
-format-charging-foreground = ${colors.charging}
+[module/polybat]
+type = custom/script
+exec = ~/.config/scripts/polybat.sh
+interval = 90
 
 [module/date]
 type = internal/date

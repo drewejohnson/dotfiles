@@ -24,3 +24,4 @@ cp -v ${IPY}/startup/startup.ipy ipython/profile_default/startup/
 # Scripts
 SCRIPT_DIR=${CONF}/scripts
 cp -v $SCRIPT_DIR/notify-bat.sh scripts/
+cp -v $SCRIPT_DIR/polybat.sh scripts/
