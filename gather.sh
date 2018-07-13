@@ -16,6 +16,7 @@ cp -v ${CONF}/rofi/config.rasi rofi/
 cp -v ${CONF}/rofi/rofi-dark.rasi rofi/
 cp -v ${CONF}/mpd/mpd.conf mpd
 cp -v ${CONF}/dunst/dunstrc dunst/
+cp -v ~/.tmux.conf .
 # Ipython
 IPY=${HOME}/.ipython/profile_default
 cp -v $IPY/ipython_config.py ipython/profile_default

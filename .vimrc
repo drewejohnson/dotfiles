@@ -37,6 +37,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 set background=dark
