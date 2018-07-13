@@ -25,6 +25,11 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
 
+######################################################################
+# -- Autostart
+######################################################################
+exec_always bash ~/.config/i3/startup.sh
+
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show combi -c ~/.config/rofi/config.rasi
 
@@ -45,9 +50,6 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Shift+x mode "$mode_system"
-
-# polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -189,6 +191,7 @@ for_window [class="feh"] floating enable, border none
 for_window [title="vimpc"] floating enable
 for_window [title="Figure \d+"] floating enable, border none
 for_window [class="st-256color"] border pixel 2
+for_window [class="xterm"] border pixel 2
 for_window [class="zathura"] border pixel 2
 #
 # Coloring
