@@ -21,3 +21,6 @@ cp -v ~/.tmux.conf .
 IPY=${HOME}/.ipython/profile_default
 cp -v $IPY/ipython_config.py ipython/profile_default
 cp -v ${IPY}/startup/startup.ipy ipython/profile_default/startup/
+# Scripts
+SCRIPT_DIR=${CONF}/scripts
+cp -v $SCRIPT_DIR/notify-bat.sh scripts/

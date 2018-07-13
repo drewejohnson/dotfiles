@@ -28,7 +28,9 @@ bindsym $mod+Shift+q kill
 ######################################################################
 # -- Autostart
 ######################################################################
-exec_always bash ~/.config/i3/startup.sh
+exec_always --no-startup-id bash ~/.config/i3/startup.sh
+
+exec_always --no-startup-id bash ~/.config/scripts/notify-bat.sh
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show combi -c ~/.config/rofi/config.rasi
