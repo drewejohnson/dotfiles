@@ -38,6 +38,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/promptline.vim'
 
 call vundle#end()
 set background=dark
@@ -127,6 +128,16 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " }
+
+"                                 promptline    {
+
+let g:promptline_preset = {
+    \'a': [promptline#slices#host({'only_if_ssh': 1}), promptline#slices#python_virtualenv() ],
+    \'b': [promptline#slices#user() ],
+    \'c': [promptline#slices#cwd() ],
+    \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
+    \'warn': [promptline#slices#last_exit_code() ]}
+"
 
 au BufRead,BufNewFile *.py,*.tex match BadWhitespace /\s+$/
 au BufWritePre *.py,*.tex :call <SID>StripTrailingWhitespaces()
