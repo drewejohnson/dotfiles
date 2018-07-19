@@ -25,6 +25,9 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+# gruvbox 256 colors
+source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+
 # promptline - link to vim-airline colors
 # like powerline but smaller
 source ~/.config/shell_prompt.sh
