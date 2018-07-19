@@ -50,7 +50,7 @@ run-command: "{cmd}";
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "rofi-dark";
+	theme: "gruvbox-dark-soft";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
