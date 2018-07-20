@@ -32,3 +32,5 @@ source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
 # like powerline but smaller
 source ~/.config/shell_prompt.sh
 
+# colors for ls
+source ~/.dir_colors
