@@ -173,7 +173,7 @@ set $mode_extend Extend display to (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDM
 # extend the current display to one of the targets
 mode "$mode_extend" {
 	bindsym v exec --no-startup-id xrandr --output DP2 --auto --left-of eDP1, mode "default"
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDI1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1, mode "default"
 	bindsym x exec --no-startup-id xrandr --output DP2  --auto --off, mode "default"
 	bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
 # back to normal
