@@ -186,13 +186,11 @@ bindsym $mod+Shift+p mode "$mode_extend"
 workspace_auto_back_and_forth yes
 
 ## Window-specific options
-for_window [class="(?i)firefox"] border none
-for_window [class="feh"] floating enable, border none
+for_window [class="^.*"] border pixel 0
+for_window [class="feh"] floating enable
 for_window [title="vimpc"] floating enable
-for_window [title="Figure \d+"] floating enable, border none
-for_window [class="st-256color"] border pixel 2
-for_window [class="xterm"] border pixel 2
-for_window [class="zathura"] border pixel 2
+for_window [title="Figure \d+"] floating enable
+
 #
 # Coloring
 #
