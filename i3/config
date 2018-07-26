@@ -175,7 +175,7 @@ set $mode_extend Extend display to (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDM
 # extend the current display to one of the targets
 mode "$mode_extend" {
 	bindsym v exec --no-startup-id xrandr --output DP2 --auto --left-of eDP1, mode "default"
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDI1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1, mode "default"
 	bindsym x exec --no-startup-id xrandr --output DP2  --auto --off, mode "default"
 	bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
 # back to normal
@@ -188,13 +188,11 @@ bindsym $mod+Shift+p mode "$mode_extend"
 workspace_auto_back_and_forth yes
 
 ## Window-specific options
-for_window [class="(?i)firefox"] border none
-for_window [class="feh"] floating enable, border none
+for_window [class="^.*"] border pixel 0
+for_window [class="feh"] floating enable
 for_window [title="vimpc"] floating enable
-for_window [title="Figure \d+"] floating enable, border none
-for_window [class="st-256color"] border pixel 2
-for_window [class="xterm"] border pixel 2
-for_window [class="zathura"] border pixel 2
+for_window [title="Figure \d+"] floating enable
+
 #
 # Coloring
 #
