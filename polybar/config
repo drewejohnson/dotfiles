@@ -30,7 +30,7 @@ width = 100%
 separator = 
 modules-left = i3
 modules-center = mpd 
-modules-right = volume wlan eth polybat cpu date powermenu
+modules-right = volume wlan eth cpu date polybat powermenu
 locale = en_US.UTF-8
 tray-position = left
 tray-detached = false
@@ -63,7 +63,7 @@ margin-top = 5
 [module/polybat]
 type = custom/script
 exec = ~/.config/scripts/polybat.sh
-interval = 90
+interval = 30
 
 [module/date]
 type = internal/date
