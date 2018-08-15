@@ -5,7 +5,6 @@ set number
 set nocompatible
 set mousehide  " hide mouse after typeing
 set hlsearch
-set splitbelow
 set splitright
 set wildmenu
 set incsearch
@@ -34,6 +33,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'thinca/vim-quickrun'
+Plugin 'plytophogy/vim-virtualenv'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
@@ -126,6 +126,11 @@ highlight BadWhitespace ctermfg=012
 "                                  airline      {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" }
+
+"                                 virtualenv    {
+let g:virtualenv_auto_activate = 1
 
 " }
 
