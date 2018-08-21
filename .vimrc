@@ -39,6 +39,9 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/promptline.vim'
+" Turn off highlighting after a search
+" Reenable it at next search and when jumping w/ n/N
+Plugin 'romainl/vim-cool'
 
 call vundle#end()
 set background=dark
