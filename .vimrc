@@ -152,8 +152,8 @@ let g:promptline_preset = {
     \'warn': [promptline#slices#last_exit_code() ]}
 "
 
-au BufRead,BufNewFile *.py,*.tex match BadWhitespace /\s+$/
-au BufWritePre *.py,*.tex :call <SID>StripTrailingWhitespaces()
+au BufRead,BufNewFile *.py,*.tex,*.c,*.h match BadWhitespace /\s+$/
+au BufWritePre *.py,*.tex,*.c,*.h :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
 " nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -196,6 +196,13 @@ let g:tex_fold_enabled = 1
 " }
 
 "                             File-type specific   {
+
+" C         {
+augroup ft_c
+    au!
+    au FileType c set foldmethod=syntax
+augroup end
+
 " LaTeX     {
 augroup ft_latex
     au!
