@@ -93,6 +93,10 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-H> <C-W>h
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+tnoremap <C-J> <C-W>j
+tnoremap <C-H> <C-W>h
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
 
 
 "                                highlighting       {
