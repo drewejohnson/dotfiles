@@ -24,7 +24,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'ajh17/VimCompletesMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
@@ -82,8 +83,8 @@ set noshowmode
 " }
 
 "                               youcompleteme       {
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = '/usr/bin/python3'
+" let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_python_binary_path = '/usr/bin/python3'
 
 " }
 
@@ -151,7 +152,7 @@ au BufRead,BufNewFile *.py,*.tex match BadWhitespace /\s+$/
 au BufWritePre *.py,*.tex :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " file editing a. la. Steve Losh    {
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
