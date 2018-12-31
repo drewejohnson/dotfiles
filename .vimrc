@@ -155,7 +155,7 @@ let g:promptline_preset = {
 "
 
 au BufRead,BufNewFile *.py,*.tex,*.c,*.h match BadWhitespace /\s+$/
-au BufWritePre *.py,*.tex,*.c,*.h :call <SID>StripTrailingWhitespaces()
+au BufWritePre *.py,*.tex,*.c,*.h,*.f90 :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
 " nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -204,6 +204,19 @@ augroup ft_c
     au!
     au FileType c set foldmethod=syntax
 augroup end
+
+" }
+
+" Fortran   {
+augroup ft_fortran
+    au!
+    au FileType fortran let fortran_free_source=1
+    au FileType fortran let fortran_fold=1
+    au FileType fortran let fortran_fold_conditionals=1
+    au FileType fortran set foldmethod=syntax
+augroup end
+
+" }
 
 " LaTeX     {
 augroup ft_latex
