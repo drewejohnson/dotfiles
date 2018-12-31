@@ -7,6 +7,7 @@ set mousehide  " hide mouse after typeing
 set hlsearch
 set splitright
 set wildmenu
+set wildignore+=*.o,*.pyc,*.pdf
 set incsearch
 set showcmd
 syntax on
@@ -126,6 +127,7 @@ call NERDTreeHighlightFile('md', 'blue', 'none')
 
 " }
 " }
+
 " bad white space    {
 highlight BadWhitespace ctermfg=012
 " }
