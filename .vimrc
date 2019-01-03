@@ -173,8 +173,8 @@ nnoremap <silent> <leader>kw :call <SID>StripTrailingWhitespaces()<CR>
 " }
 " fugitive  {
 
-noremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gca :Gcommit --amend<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gd :Gdiff<CR>
