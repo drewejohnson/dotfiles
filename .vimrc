@@ -25,7 +25,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -34,9 +33,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
-Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'thinca/vim-quickrun'
-Plugin 'plytophogy/vim-virtualenv'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'morhetz/gruvbox'
@@ -48,6 +45,8 @@ Plugin 'edkolev/promptline.vim'
 Plugin 'romainl/vim-cool'
 
 call vundle#end()
+
+" Colorscheme
 set background=dark
 let g:gruvbox_contrast_dark = 'high'
 colorscheme gruvbox
