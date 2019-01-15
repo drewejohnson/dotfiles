@@ -82,11 +82,6 @@ set noshowmode
 
 " }
 
-"                               youcompleteme       {
-" let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-" let g:ycm_python_binary_path = '/usr/bin/python3'
-
-" }
 
 " navigate through split screens with normal navigation commands
 nnoremap <C-J> <C-W>j
