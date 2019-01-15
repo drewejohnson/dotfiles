@@ -7,7 +7,7 @@ set mousehide  " hide mouse after typeing
 set hlsearch
 set splitright
 set wildmenu
-set wildignore+=*.o,*.pyc,*.pdf
+set wildignore+=*.o,*.pyc,*.pdf,*.mod,*.so
 set incsearch
 set showcmd
 syntax on
