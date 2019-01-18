@@ -135,7 +135,6 @@ au BufRead,BufNewFile *.py,*.tex,*.c,*.h match BadWhitespace /\s+$/
 au BufWritePre *.py,*.tex,*.c,*.h,*.f90 :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
-" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " file editing a. la. Steve Losh    {
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
