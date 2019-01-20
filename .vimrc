@@ -10,6 +10,7 @@ set wildmenu
 set wildignore+=*.o,*.pyc,*.pdf,*.mod,*.so
 set incsearch
 set showcmd
+let fortran_free_source=1
 syntax on
 
 " directories   {
@@ -148,8 +149,8 @@ let g:promptline_preset = {
     \'warn': [promptline#slices#last_exit_code() ]}
 "
 
-au BufRead,BufNewFile *.py,*.tex,*.c,*.h match BadWhitespace /\s+$/
-au BufWritePre *.py,*.tex,*.c,*.h,*.f90 :call <SID>StripTrailingWhitespaces()
+au BufRead,BufNewFile *.py,*.tex,*.c,*.h,*.f90,*.f08 match BadWhitespace /\s+$/
+au BufWritePre *.py,*.tex,*.c,*.h,*.f90,*.f08 :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
 " nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -204,7 +205,6 @@ augroup end
 " Fortran   {
 augroup ft_fortran
     au!
-    au FileType fortran let fortran_free_source=1
     au FileType fortran let fortran_fold=1
     au FileType fortran let fortran_fold_conditionals=1
     au FileType fortran set foldmethod=syntax
