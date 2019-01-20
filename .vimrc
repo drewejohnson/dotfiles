@@ -1,6 +1,6 @@
 " my vimrc file
 "                              general settings     {
-set fileencoding=utf=8
+set fileencoding=utf-8
 set number
 set nocompatible
 set mousehide  " hide mouse after typeing
@@ -31,7 +31,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
 Plugin 'thinca/vim-quickrun'
@@ -74,15 +73,10 @@ endfunction
 
 "                                Status line        {
 set laststatus=2
-set statusline=
-set statusline+=%-10.3n\         " buffer number
-set statusline+=%f\              " file name
-set statusline+=%h%m%r%w         " file types - help, modified, RO, preview
-set showtabline=2
-set noshowmode
-
+set statusline=%f%m%r%h%w[%{&ff}]%y[%p%%][%l,%v]
+" file path, modified, readonly, help flag, preview flag
+" file format, file type, percentage, [line, col]
 " }
-
 
 " navigate through split screens with normal navigation commands
 nnoremap <C-J> <C-W>j
@@ -128,17 +122,6 @@ highlight BadWhitespace ctermfg=012
 " }
 " }
 
-"                                  airline      {
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" }
-
-"                                 virtualenv    {
-let g:virtualenv_auto_activate = 1
-
-" }
-
 "                                 promptline    {
 
 let g:promptline_preset = {
@@ -153,7 +136,6 @@ au BufRead,BufNewFile *.py,*.tex,*.c,*.h,*.f90,*.f08 match BadWhitespace /\s+$/
 au BufWritePre *.py,*.tex,*.c,*.h,*.f90,*.f08 :call <SID>StripTrailingWhitespaces()
 
 "                                  leaders      {
-" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " file editing a. la. Steve Losh    {
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
