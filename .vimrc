@@ -190,6 +190,7 @@ augroup ft_fortran
     au FileType fortran let fortran_fold=1
     au FileType fortran let fortran_fold_conditionals=1
     au FileType fortran set foldmethod=syntax
+    au FileType fortran set tabstop=3 shiftwidth=3
 augroup end
 
 " }
