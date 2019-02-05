@@ -1,0 +1,5 @@
+# Config for pretty plots
+mathtext.fontset : stix
+font.family : STIXGeneral
+font.size : 12
+axes.titlesize : medium

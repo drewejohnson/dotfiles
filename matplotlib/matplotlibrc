@@ -1,0 +1,8 @@
+# Use latex fonts
+font.family : STIXGeneral
+font.size   : 12
+
+mathtext.fontset : stix
+
+# Tight figures on save
+savefig.bbox : tight
