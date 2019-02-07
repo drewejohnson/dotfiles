@@ -5,4 +5,4 @@ font.size : 12
 # axes
 axes.titlesize : medium
 # coloring is seaborn-colorblind, found in matplotlib defaults
-axes.prop_cycle : cycler(color=['0072B2', '009E73', 'D55E00', 'CC79A7', 'F0E442', '56B4E9'], marker=['s', 'o', 'x', 'h', '*', 'd'])
+axes.prop_cycle : cycler(color=['0072B2', 'D55E00', '009E73', 'CC79A7', 'F0E442', '56B4E9'], marker=['s', 'o', 'x', 'h', '*', 'd'])
