@@ -36,20 +36,17 @@ Plugin 'nvie/vim-flake8'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/promptline.vim'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
 " Reenable it at next search and when jumping w/ n/N
 Plugin 'romainl/vim-cool'
+" Colorscheme
+Plugin 'romainl/apprentice'
 
 call vundle#end()
 
-" Colorscheme
-set background=dark
-let g:gruvbox_contrast_dark = 'high'
-colorscheme gruvbox
 filetype plugin indent on
 
 set tabstop=4 expandtab softtabstop=0 shiftwidth=4 smarttab
@@ -125,10 +122,11 @@ highlight BadWhitespace ctermfg=012
 "                                 promptline    {
 
 let g:promptline_preset = {
-    \'a': [promptline#slices#host({'only_if_ssh': 1}), promptline#slices#python_virtualenv() ],
+    \'a': [promptline#slices#python_virtualenv() ],
     \'b': [promptline#slices#user() ],
-    \'c': [promptline#slices#cwd() ],
+    \'c': [promptline#slices#cwd({'dir_limit': 1}) ],
     \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
+    \'x': [promptline#slices#jobs()], 
     \'warn': [promptline#slices#last_exit_code() ]}
 "
 
@@ -235,3 +233,6 @@ augroup end
 
 "}
 
+" Colorscheme {
+set background=dark
+colorscheme apprentice
