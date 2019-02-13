@@ -37,7 +37,9 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
+" Some theming
 Plugin 'edkolev/promptline.vim'
+Plugin 'edkolev/tmuxline.vim'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
 " Reenable it at next search and when jumping w/ n/N
@@ -126,9 +128,22 @@ let g:promptline_preset = {
     \'b': [promptline#slices#user() ],
     \'c': [promptline#slices#cwd({'dir_limit': 1}) ],
     \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
-    \'x': [promptline#slices#jobs()], 
+    \'z': [promptline#slices#jobs()], 
     \'warn': [promptline#slices#last_exit_code() ]}
-"
+" }
+
+"                                  tmuxline     {
+
+let g:tmuxline_preset = {
+    \'a': '#S',
+    \'win': '#I #W', 
+    \'cwin': '#I #W',
+    \'x': '%F',
+    \'y': '%R',
+    \'z': '#H',
+    \'options': {'status-justify': 'left'}}
+
+" }
 
 au BufRead,BufNewFile *.py,*.tex,*.c,*.h,*.f90,*.f08 match BadWhitespace /\s+$/
 au BufWritePre *.py,*.tex,*.c,*.h,*.f90,*.f08 :call <SID>StripTrailingWhitespaces()
