@@ -132,15 +132,13 @@ let g:promptline_preset = {
     \'warn': [promptline#slices#last_exit_code() ]}
 " }
 
-"                                  tmuxline     {
-
+"                                tmuxline    {
 let g:tmuxline_preset = {
     \'a': '#S',
-    \'win': '#I #W', 
+    \'win': '#I #W',
     \'cwin': '#I #W',
-    \'x': '%F',
-    \'y': '%R',
     \'z': '#H',
+    \'y': '%a %R',
     \'options': {'status-justify': 'left'}}
 
 " }
