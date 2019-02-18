@@ -38,8 +38,8 @@ Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
 " Some theming
-Plugin 'edkolev/promptline.vim'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/promptline.vim'
+" Plugin 'edkolev/tmuxline.vim'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
 " Reenable it at next search and when jumping w/ n/N
@@ -123,23 +123,24 @@ highlight BadWhitespace ctermfg=012
 
 "                                 promptline    {
 
-let g:promptline_preset = {
-    \'a': [promptline#slices#python_virtualenv() ],
-    \'b': [promptline#slices#user() ],
-    \'c': [promptline#slices#cwd({'dir_limit': 1}) ],
-    \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
-    \'z': [promptline#slices#jobs()], 
-    \'warn': [promptline#slices#last_exit_code() ]}
+" let g:promptline_preset = {
+"     \'a': [promptline#slices#python_virtualenv() ],
+"     \'b': [promptline#slices#user() ],
+"     \'c': [promptline#slices#cwd({'dir_limit': 1}) ],
+"     \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
+"     \'z': [promptline#slices#jobs()], 
+"     \'warn': [promptline#slices#last_exit_code() ]}
+"
 " }
 
 "                                tmuxline    {
-let g:tmuxline_preset = {
-    \'a': '#S',
-    \'win': '#I #W',
-    \'cwin': '#I #W',
-    \'z': '#H',
-    \'y': '%a %R',
-    \'options': {'status-justify': 'left'}}
+" let g:tmuxline_preset = {
+"     \'a': '#S',
+"     \'win': '#I #W',
+"     \'cwin': '#I #W',
+"     \'z': '#H',
+"     \'y': '%a %R',
+"     \'options': {'status-justify': 'left'}}
 
 " }
 
