@@ -1,2 +1,2 @@
 # set markers
-axes.prop_cycle : cycler(marker=['-s', '-o', '-x', '-h', '-*', '-d'])
+axes.prop_cycle : cycler(marker=['s', 'o', 'x', 'h', '*', 'd'])
