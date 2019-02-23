@@ -28,9 +28,6 @@ fi
 
 case "$TERM" in
     st-256color|screen-256color)
-        # gruvbox 256 colors
-        source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
-
         # promptline - link to vim-airline colors
         # like powerline but smaller
         source ~/.config/shell_prompt.sh
