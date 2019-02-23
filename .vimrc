@@ -27,7 +27,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ajh17/VimCompletesMe'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -37,6 +36,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ludovicchabant/vim-gutentags'
 " Some theming
 " Plugin 'edkolev/promptline.vim'
 " Plugin 'edkolev/tmuxline.vim'
