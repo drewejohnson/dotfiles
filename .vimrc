@@ -96,26 +96,6 @@ highlight clear SpellLocal
 highlight SpellLocal cterm=underline ctermfg=012
 "}
 
-"                                  nerdtree     {
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" nerdtree coloring  {
-" https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696
-
-function! NERDTreeHighlightFile(extension, fg, bg)
-    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg
-    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-
-call NERDTreeHighlightFile('py', 'green', 'none')
-call NERDTreeHighlightFile('yaml', 'yellow', 'none')
-call NERDTreeHighlightFile('rst', 'blue', 'none')
-call NERDTreeHighlightFile('md', 'blue', 'none')
-
-" }
-" }
-
 " bad white space    {
 highlight BadWhitespace ctermfg=012
 " }
