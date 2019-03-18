@@ -229,3 +229,6 @@ mode "$mode_music" {
 }
 bindsym $mod+m mode "$mode_music"
 
+bar {
+    status_command i3status
+}
