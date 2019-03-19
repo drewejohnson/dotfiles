@@ -229,4 +229,13 @@ bindsym $mod+m mode "$mode_music"
 
 bar {
     status_command ~/.config/conky/conky-bar.sh
+    colors {
+        background #262626
+        statusline #ffffff
+
+        focused_workspace #262626 #5f5f87 #ffffff
+        active_workspace  #262626 #bcbcbc #ffffff
+        inactive_workspace #262626 #1c1c1c #ffffff
+        urgent_workspace #af5f5f #af5f5f #ffffff
+    }
 }
