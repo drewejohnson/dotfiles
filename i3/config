@@ -190,7 +190,6 @@ workspace_auto_back_and_forth yes
 ## Window-specific options
 for_window [class="^.*"] border pixel 0
 for_window [class="feh"] floating enable
-for_window [title="vimpc"] floating enable
 for_window [title="Figure \d+"] floating enable
 
 #
@@ -215,14 +214,13 @@ client.background       $bg
 #
 # music control
 #
-set $mode_music Music: (h) prev, (l) next, (r) restart, (space) toggle, (s) stop, (v) vimpc
+set $mode_music Music: (h) prev, (l) next, (r) restart, (space) toggle, (s) stop
 mode "$mode_music" {
     bindsym l exec --no-startup-id mpc next
     bindsym h exec --no-startup-id mpc prev
     bindsym space exec --no-startup-id mpc toggle, mode "default"
     bindsym r exec --no-startup-id mpc seek 0%, mode "default"
     bindsym s exec --no-startup-id mpc stop, mode "default"
-    bindsym v exec st  -g 80X50 -e vimpc, mode "default"
     bindsym q mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
