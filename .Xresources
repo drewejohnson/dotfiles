@@ -1,5 +1,5 @@
-xterm*faceName: DejaVu Sans Mono Book
-xterm*faceSize: 14
+xterm*faceName: DejaVu Sans Mono
+xterm*faceSize: 12
 ! colors
 xterm*foreground: rgb:eb/db/b2
 xterm*background: rgb:28/28/28
