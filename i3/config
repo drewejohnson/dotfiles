@@ -14,7 +14,7 @@ set $win Mod4  # windows key
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -93,7 +93,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
+set $ws1 "1:"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
@@ -190,7 +190,6 @@ workspace_auto_back_and_forth yes
 ## Window-specific options
 for_window [class="^.*"] border pixel 0
 for_window [class="feh"] floating enable
-for_window [title="vimpc"] floating enable
 for_window [title="Figure \d+"] floating enable
 
 #
@@ -215,14 +214,13 @@ client.background       $bg
 #
 # music control
 #
-set $mode_music Music: (h) prev, (l) next, (r) restart, (space) toggle, (s) stop, (v) vimpc
+set $mode_music Music: (h) prev, (l) next, (r) restart, (space) toggle, (s) stop
 mode "$mode_music" {
     bindsym l exec --no-startup-id mpc next
     bindsym h exec --no-startup-id mpc prev
     bindsym space exec --no-startup-id mpc toggle, mode "default"
     bindsym r exec --no-startup-id mpc seek 0%, mode "default"
     bindsym s exec --no-startup-id mpc stop, mode "default"
-    bindsym v exec st  -g 80X50 -e vimpc, mode "default"
     bindsym q mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -230,5 +228,14 @@ mode "$mode_music" {
 bindsym $mod+m mode "$mode_music"
 
 bar {
-    status_command i3status
+    status_command ~/.config/conky/conky-bar.sh
+    colors {
+        background #262626
+        statusline #ffffff
+
+        focused_workspace #262626 #5f5f87 #ffffff
+        active_workspace  #262626 #5f87d7 #1c1c1c
+        inactive_workspace #262626 #1c1c1c #ffffff
+        urgent_workspace #af5f5f #af5f5f #ffffff
+    }
 }
