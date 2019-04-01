@@ -10,6 +10,7 @@ set wildmenu
 set wildignore+=*.o,*.pyc,*.pdf,*.mod,*.so
 set incsearch
 set showcmd
+set relativenumber
 let fortran_free_source=1
 syntax on
 
