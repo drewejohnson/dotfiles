@@ -46,7 +46,8 @@ Plugin 'ludovicchabant/vim-gutentags'
 " Reenable it at next search and when jumping w/ n/N
 Plugin 'romainl/vim-cool'
 " Colorscheme
-Plugin 'romainl/apprentice'
+Plugin 'axvr/photon.vim'
+Plugin 'liuchengxu/space-vim-theme'
 
 call vundle#end()
 
@@ -230,4 +231,4 @@ augroup end
 
 " Colorscheme {
 set background=dark
-colorscheme apprentice
+colorscheme space_vim_theme
