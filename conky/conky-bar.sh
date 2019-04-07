@@ -6,4 +6,4 @@ echo '{"version":1}'
 echo '['
 echo '[],'
 
-exec conky -c ~/.config/conky/conky-stat.conf
+exec conky -c ~/.config/conky/conky-stat.conf 2>/dev/null
