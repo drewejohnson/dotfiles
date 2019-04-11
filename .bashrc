@@ -11,7 +11,6 @@ export EDITOR=vim
 export VISUAL=vim
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 export BSTINPUTS=~/.latex
-
 #
 # Aliases
 #
@@ -24,6 +23,10 @@ fi
 #
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
+fi
+
+if [ -f ~/.bash_gt ]; then
+    . ~/.bash_gt
 fi
 
 case "$TERM" in
