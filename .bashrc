@@ -29,13 +29,7 @@ if [ -f ~/.bash_gt ]; then
     . ~/.bash_gt
 fi
 
-case "$TERM" in
-    st-256color|screen-256color)
-        # promptline - link to vim-airline colors
-        # like powerline but smaller
-        source ~/.config/shell_prompt.sh
-    ;;
-esac
+export PS1='[\u@\h] \W\n\$ '
 
 # colors for ls
 source ~/.dir_colors
