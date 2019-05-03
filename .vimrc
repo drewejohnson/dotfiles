@@ -37,16 +37,14 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ludovicchabant/vim-gutentags'
-" Some theming
-" Plugin 'edkolev/promptline.vim'
-" Plugin 'edkolev/tmuxline.vim'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
 " Reenable it at next search and when jumping w/ n/N
 Plugin 'romainl/vim-cool'
 " Colorscheme
-Plugin 'axvr/photon.vim'
+" Similar dark purple theme, but more minimal
+" better for non-256 terminals
+" Plugin 'axvr/photon.vim'
 Plugin 'liuchengxu/space-vim-theme'
 
 call vundle#end()
@@ -101,29 +99,6 @@ highlight SpellLocal cterm=underline ctermfg=012
 " bad white space    {
 highlight BadWhitespace ctermfg=012
 " }
-" }
-
-"                                 promptline    {
-
-" let g:promptline_preset = {
-"     \'a': [promptline#slices#python_virtualenv() ],
-"     \'b': [promptline#slices#user() ],
-"     \'c': [promptline#slices#cwd({'dir_limit': 1}) ],
-"     \'y': [promptline#slices#vcs_branch(), promptline#slices#git_status() ],
-"     \'z': [promptline#slices#jobs()], 
-"     \'warn': [promptline#slices#last_exit_code() ]}
-"
-" }
-
-"                                tmuxline    {
-" let g:tmuxline_preset = {
-"     \'a': '#S',
-"     \'win': '#I #W',
-"     \'cwin': '#I #W',
-"     \'z': '#H',
-"     \'y': '%a %R',
-"     \'options': {'status-justify': 'left'}}
-
 " }
 
 au BufRead,BufNewFile *.py,*.tex,*.c,*.h,*.f90,*.f08 match BadWhitespace /\s+$/
