@@ -34,17 +34,17 @@ fi
 #
 
 # get some colors
-GREEN=""
-RED=""
-YELLOW=""
-RESET=""
+__ps1_c_green=""
+__ps1_c_red=""
+__ps1_c_yellow=""
+__ps1_c_reset=""
 
 case $TERM in 
     screen-256color | st-256color)
-        GREEN="$(tput setaf 2)"
-        RESET="$(tput sgr0)"
-        RED="$(tput setaf 1)"
-        YELLOW="$(tput setaf 3)"
+        __ps1_c_green="$(tput setaf 2)"
+        __ps1_c_reset="$(tput sgr0)"
+        __ps1_c_red="$(tput setaf 1)"
+        __ps1_c_yellow="$(tput setaf 3)"
         ;;
 esac
 
@@ -57,17 +57,17 @@ function __ps1_git_dirty {
     # check if in repo
     git rev-parse --git-dir 2>/dev/null 1>/dev/null && \
         if [[ -z $(git status --porcelain) ]]; then
-            echo -n "${GREEN} " 
+            echo -n "${__ps1_c_green} " 
         else
             # staged modified, added, deleted
             if [[ $(git status --porcelain | grep -e "^M" -e "^A" -e "^D" -c ) != '0' ]]; then
-                echo -n "${YELLOW} "
+                echo -n "${__ps1_c_yellow} "
             fi
             # unstaged modifed, added, deleted
             if [[ $(git status --porcelain | grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -c) != '0' ]]; then
-                echo -n "${RED} "
+                echo -n "${__ps1_c_red} "
             fi
-        fi && echo ${RESET}
+        fi && echo ${__ps1_c_reset}
 }
 
 export PS1='[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n\$ '
