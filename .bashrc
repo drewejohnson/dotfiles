@@ -79,8 +79,15 @@ function __ps1_prompt_command {
     else
         __ps1_exit_mark="${__ps1_c_red}${__ps1_exit_stat}${__ps1_c_reset}"
     fi
+    # number of jobs
+    __ps1_njobs=$(jobs -p | wc -l)
+    if [[ ${__ps1_njobs} != '0' ]]; then
+        __ps1_job_mark=${__ps1_c_yellow}[${__ps1_njobs}]${__ps1_c_reset}
+    else
+        __ps1_job_mark=""
+    fi
 
-    export PS1='[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n${__ps1_exit_mark}\$ '
+    export PS1='[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n${__ps1_exit_mark}${__ps1_job_mark}\$ '
 }
 
 export PROMPT_COMMAND="__ps1_prompt_command"
