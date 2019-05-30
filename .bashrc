@@ -77,7 +77,6 @@ function __ps1_prompt_command {
     if [[ ${__ps1_exit_stat} == 0 ]]; then
         __ps1_exit_mark=""
     else
-        echo --- ${__ps1_exit_stat}
         __ps1_exit_mark="${__ps1_c_red}${__ps1_exit_stat}${__ps1_c_reset}"
     fi
 
