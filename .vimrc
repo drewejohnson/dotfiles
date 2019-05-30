@@ -51,7 +51,7 @@ call vundle#end()
 
 filetype plugin indent on
 
-set tabstop=4 expandtab softtabstop=0 shiftwidth=4 smarttab
+set tabstop=4 expandtab softtabstop=0 shiftwidth=0 smarttab
 
 "                                 Functions         {
 
@@ -149,6 +149,15 @@ let g:tex_fold_enabled = 1
 augroup ft_c
     au!
     au FileType c set foldmethod=syntax
+    au FileType c set tabstop=2
+augroup end
+
+" }
+
+" C++       {
+augroup ft_cpp
+    au!
+    au FileType cpp  set foldmethod=syntax tabstop=2
 augroup end
 
 " }
@@ -158,8 +167,7 @@ augroup ft_fortran
     au!
     au FileType fortran let fortran_fold=1
     au FileType fortran let fortran_fold_conditionals=1
-    au FileType fortran set foldmethod=syntax
-    au FileType fortran set tabstop=3 shiftwidth=3
+    au FileType fortran set tabstop=3 foldmethod=syntax
 augroup end
 
 " }
