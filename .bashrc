@@ -70,7 +70,21 @@ function __ps1_git_dirty {
         fi && echo ${__ps1_c_reset}
 }
 
-export PS1='[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n\$ '
+
+function __ps1_prompt_command {
+    # exit status
+    local __ps1_exit_stat=$?
+    if [[ ${__ps1_exit_stat} == 0 ]]; then
+        __ps1_exit_mark=""
+    else
+        echo --- ${__ps1_exit_stat}
+        __ps1_exit_mark="${__ps1_c_red}${__ps1_exit_stat}${__ps1_c_reset}"
+    fi
+
+    export PS1='[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n${__ps1_exit_mark}\$ '
+}
+
+export PROMPT_COMMAND="__ps1_prompt_command"
 
 # colors for ls
 source ~/.dir_colors
