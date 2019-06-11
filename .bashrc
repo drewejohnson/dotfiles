@@ -55,19 +55,21 @@ function __ps1_git_branch {
 
 function __ps1_git_dirty {
     # check if in repo
-    git rev-parse --git-dir 2>/dev/null 1>/dev/null && \
-        if [[ -z $(git status --porcelain) ]]; then
-            echo -n "${__ps1_c_green} " 
-        else
-            # staged modified, added, deleted
-            if [[ $(git status --porcelain | grep -e "^M" -e "^A" -e "^D" -c ) != '0' ]]; then
-                echo -n "${__ps1_c_yellow} "
-            fi
-            # unstaged modifed, added, deleted
-            if [[ $(git status --porcelain | grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -c) != '0' ]]; then
-                echo -n "${__ps1_c_red} "
-            fi
-        fi && echo ${__ps1_c_reset}
+    git rev-parse --git-dir 2>/dev/null 1>/dev/null || exit
+    local stat=$(git status --porcelain)
+    if [[ -z $stat ]]; then
+        echo -n "${__ps1_c_green} " 
+    else
+        # staged modified, added, deleted
+        if [[ $(grep -e "^M" -e "^A" -e "^D" -c <<< ${stat}) != '0' ]]; then
+            echo -n "${__ps1_c_yellow} "
+        fi
+        # unstaged modifed, added, deleted
+        if [[ $(grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -c <<< ${stat}) != '0' ]]; then
+            echo -n "${__ps1_c_red} "
+        fi
+    fi
+    echo ${__ps1_c_reset}
 }
 
 
