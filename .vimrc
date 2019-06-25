@@ -68,6 +68,10 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l,c)
 endfunction
 
+" Allow the use of vsb to make a vertical split from a buffer
+" https://github.com/vim/vim/pull/3816
+cnoreabbrev <expr> vsb getcmdtype()==':' && getcmdline()=='vsb' ? 'vert sb' : 'vsb'
+
 "   }
 
 "                                Status line        {
