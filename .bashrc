@@ -64,8 +64,8 @@ function __ps1_git_dirty {
         if [[ $(grep -e "^M" -e "^A" -e "^D" -c <<< ${stat}) != '0' ]]; then
             echo -n "${__ps1_c_yellow} "
         fi
-        # unstaged modifed, added, deleted
-        if [[ $(grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -c <<< ${stat}) != '0' ]]; then
+        # unstaged modifed, added, deleted, conflicted
+        if [[ $(grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -e "^UU" -c <<< ${stat}) != '0' ]]; then
             echo -n "${__ps1_c_red} "
         fi
     fi
@@ -98,7 +98,7 @@ function __ps1_prompt_command {
         __ps1_job_mark=""
     fi
 
-    export PS1='${__ps1_venv}[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n${__ps1_exit_mark}${__ps1_job_mark}\$ '
+    export PS1='${__ps1_venv}${__ps1_exit_mark}${__ps1_job_mark}[\u@\h] \W $(__ps1_git_branch) $(__ps1_git_dirty)\n\$ '
 }
 
 export PROMPT_COMMAND="__ps1_prompt_command"
