@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Source Code Pro for Powerline:pixelsize=14:antialias=true:autohint=true";
+static char *font = "hack:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -30,9 +30,9 @@ static float chscale = 1.0;
 /*
  * word delimiter string
  *
- * More advanced example: " `'\"()[]{}"
+ * More advanced example: L" `'\"()[]{}"
  */
-char *worddelimiters = " ";
+wchar_t *worddelimiters = L" ";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
