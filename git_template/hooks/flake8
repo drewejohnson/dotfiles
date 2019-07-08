@@ -1,0 +1,6 @@
+#!/bin/sh
+# Use flake8 to check the lint in a diff
+# Additional arguments are passed to diff, e.g.
+# git flake8 develop # compare against develop
+# git flake8  # check unstaged changes
+git diff $@ -U0 | flake8 --diff

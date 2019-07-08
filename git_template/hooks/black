@@ -1,0 +1,6 @@
+#!/bin/sh
+# Apply the Black python formatter to all python files
+# tracked
+# Additional arguments will be passed to the formatter
+
+black $@ $(git ls-files | grep ".*py$")
