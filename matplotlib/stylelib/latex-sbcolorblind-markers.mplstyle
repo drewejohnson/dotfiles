@@ -1,7 +1,7 @@
 # Config for pretty plots
 mathtext.fontset : stix
 font.family : STIXGeneral
-font.size : 12
+font.size : 14
 # axes
 axes.titlesize : medium
 # coloring is seaborn-colorblind, found in matplotlib defaults
