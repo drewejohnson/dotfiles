@@ -75,8 +75,8 @@ cnoreabbrev <expr> vsb getcmdtype()==':' && getcmdline()=='vsb' ? 'vert sb' : 'v
 
 "                                Status line        {
 set laststatus=2
-set statusline=%f%m%r%h%w[%{&ff}]%y[%p%%][%l,%v]
-" file path, modified, readonly, help flag, preview flag
+set statusline=%f%{FugitiveStatusline()}%m%r%h%w[%{&ff}]%y[%p%%][%l,%v]
+" file path, git branch, modified, readonly, help flag, preview flag
 " file format, file type, percentage, [line, col]
 " }
 
