@@ -29,7 +29,7 @@ bindsym $mod+Shift+q kill
 # -- Autostart
 ######################################################################
 exec_always --no-startup-id bash ~/.config/i3/startup.sh
-
+exec_always --no-startup-id nm-applet
 exec_always --no-startup-id bash ~/.config/scripts/notify-bat.sh
 
 # Autolock
