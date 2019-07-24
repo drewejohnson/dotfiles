@@ -44,7 +44,7 @@ Plugin 'romainl/vim-cool'
 " Similar dark purple theme, but more minimal
 " better for non-256 terminals
 " Plugin 'axvr/photon.vim'
-Plugin 'liuchengxu/space-vim-theme'
+Plugin 'nightsense/cosmic_latte'
 
 call vundle#end()
 
@@ -216,4 +216,4 @@ augroup end
 
 " Colorscheme {
 set background=dark
-colorscheme space_vim_theme
+colorscheme cosmic_latte
