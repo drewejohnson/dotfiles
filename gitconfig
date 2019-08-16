@@ -8,6 +8,11 @@
 [init]
 	templatedir = ~/.git_template
 [alias]
+    # More verbose onelined logs
+    # Show all branches
+    al = log --oneline --all --decorate
+    ag = al --graph
+
     # Apply black formater to all tracked python files
     # No arguments
     black = !.git/hooks/black
@@ -16,14 +21,24 @@
     # No arguments
     ctags = !.git/hooks/ctags
 
+    # Checkout variants
+    cb = checkout -b
+
     # Run the flake8 on unified diff
     # Arguments are passed to git diff
     flake8 =  !.git/hooks/flake8
 
     # Pretty-fied one lined log
-    ol = log --oneline --pretty='tformat:%C(yellow)%h%Creset %Cgreen[%an]%Creset %s %Cred(%cr)%Creset '
+    ol = log --oneline --pretty='tformat:%C(yellow)%h%Creset %Cgreen[%an]%Creset %s'
     # Onelined log graph
-    og = log --graph --oneline --pretty='tformat:%C(yellow)%h%Creset %Cgreen[%an]%Creset %s'
+    og = ol --graph
+
+    # short log / reflogs
+    # default to 20 items
+    sal = al -n 20
+    sag = ag -n 20
+    sol = ol -n 20
+    srl = reflog -n 20
 
     # Show author and title of single commit
     whatis = show -s --pretty='tformat:%C(yellow)%h%Creset %an: (%s, %ad)' --date=short
