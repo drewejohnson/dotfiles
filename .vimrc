@@ -4,7 +4,7 @@ set fileencoding=utf-8
 set number
 set nocompatible
 set mousehide  " hide mouse after typeing
-set hlsearch
+set nohlsearch
 set splitright
 set wildmenu
 set wildignore+=*.o,*.pyc,*.pdf,*.mod,*.so,*.h.gch
@@ -38,8 +38,6 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
-" Reenable it at next search and when jumping w/ n/N
-Plugin 'romainl/vim-cool'
 " Colorscheme
 " Similar dark purple theme, but more minimal
 " better for non-256 terminals
