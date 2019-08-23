@@ -1,12 +1,11 @@
 configuration {
-modi: "window,run";
+modi: "run";
 width: 50;
 lines: 15;
 columns: 1;
 font: "mono 12";
 show-icons: true;
 run-command: "{cmd}";
-combi-modi: "window,run";
 theme: "Arc-Dark";
 }
 /*

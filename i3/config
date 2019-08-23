@@ -36,7 +36,7 @@ exec_always --no-startup-id bash ~/.config/scripts/notify-bat.sh
 exec --no-startup-id xautolock -time 5 -locker i3lock &
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show combi -c ~/.config/rofi/config.rasi
+bindsym $mod+d exec --no-startup-id rofi -show run -c ~/.config/rofi/config.rasi
 
 # lock the screen
 bindsym $mod+x exec i3lock -c 708090
