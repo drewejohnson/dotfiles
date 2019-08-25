@@ -60,12 +60,12 @@ function __ps1_git_dirty {
     if [[ -z $stat ]]; then
         echo -n "${__ps1_c_green} " 
     else
-        # staged modified, added, deleted
-        if [[ $(grep -e "^M" -e "^A" -e "^D" -c <<< ${stat}) != '0' ]]; then
+        # staged modified, added, deleted, renamed
+        if [[ $(grep -e "^M" -e "^A" -e "^D" -e "^R" -c <<< ${stat}) != '0' ]]; then
             echo -n "${__ps1_c_yellow} "
         fi
-        # unstaged modifed, added, deleted, conflicted
-        if [[ $(grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -e "^UU" -c <<< ${stat}) != '0' ]]; then
+        # unstaged modifed, added, deleted, conflicted, renamed
+        if [[ $(grep -e "^.M " -e "^.A " -e "^.D " -e "^??" -e "^UU" -e "^.R" -c <<< ${stat}) != '0' ]]; then
             echo -n "${__ps1_c_red} "
         fi
     fi
