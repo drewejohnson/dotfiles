@@ -11,23 +11,11 @@ export EDITOR=vim
 export VISUAL=vim
 export HISTCONTROL=ignoredups
 export BSTINPUTS=~/.latex
-#
-# Aliases
-#
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
-#
-# Functions
-#
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
 
-if [ -f ~/.bash_gt ]; then
-    . ~/.bash_gt
-fi
+[ -r ~/.bash_aliases ] && . ~/.bash_aliases
+[ -r ~/.bash_functions ] && . ~/.bash_functions
+[ -r ~/.bash_gt ] && . ~/.bash_gt
 
 #
 # Shell prompt
