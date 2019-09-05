@@ -30,7 +30,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
@@ -106,31 +105,9 @@ au BufWritePre *.py,*.tex,*.c,*.h,*.f90,*.f08 :call <SID>StripTrailingWhitespace
 
 "                                  leaders      {
 
-" file editing a. la. Steve Losh    {
-nnoremap <leader>ev :tabe ~/.vimrc<CR>
-nnoremap <leader>sv :source ~/.vimrc<CR>
-nnoremap <leader>ei :tabe ~/.config/i3/config<CR>
-
-"   }
-
 " Kill all whitespace
 nnoremap <silent> <leader>kw :call <SID>StripTrailingWhitespaces()<CR>
 
-" }
-" fugitive  {
-
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gca :Gcommit --amend<CR>
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>gp :Gpush<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gvd :Gvdiff<CR>
-nnoremap <leader>gdp :diffput<CR>
-nnoremap <leader>gdg :diffget<CR>
-vnoremap <leader>gdp :diffput<CR>
-vnoremap <leader>gdg :diffget<CR>
-
-" }
 " }
 
 "                                  folding      {
