@@ -11,6 +11,7 @@ set wildignore+=*.o,*.pyc,*.pdf,*.mod,*.so,*.h.gch
 set incsearch
 set showcmd
 set relativenumber
+set tags=./tags,./.git/tags,tags,.git/tags
 let fortran_free_source=1
 syntax on
 
