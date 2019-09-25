@@ -31,8 +31,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-dispatch'
 Plugin 'nvie/vim-flake8'
-Plugin 'thinca/vim-quickrun'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -155,7 +155,7 @@ augroup ft_latex
     au!
 
     " Build the document using rubber and generate a pdf
-    au FileType tex nnoremap <buffer> <localleader>1 :! rubber -d %<CR>
+    au FileType tex nnoremap <buffer> <localleader>1 :Dispatch rubber -d %<CR>
 
 augroup end
 
@@ -167,8 +167,7 @@ augroup ft_python
 
     au FileType python inoremap <buffer> <c-b> """"""<left><left><left>
     au FileType python nnoremap <buffer> <localleader>1 yypv$r-:redraw<cr>
-    au FileType python nnoremap <buffer> <localleader>q :QuickRun<CR>
-    au FileType python vnoremap <buffer> <localleader>q :QuickRun<CR>
+    au FileType python nnoremap <buffer> <localleader>q :Dispatch python %<CR>
     au InsertEnter *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+\%#\@!$/
     au InsertLeave *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+$/
 
