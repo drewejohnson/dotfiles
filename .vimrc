@@ -150,6 +150,13 @@ augroup end
 
 " }
 
+" git commit {
+
+augroup ft_gitcommit
+    au!
+    au FileType gitcommit set spell
+augroup end
+
 " LaTeX     {
 augroup ft_latex
     au!
@@ -182,6 +189,7 @@ augroup ft_rest
     au FileType rst nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
     au FileType rst nnoremap <buffer> <localleader>2 yypVr-:redraw<cr>
     au FileType rst nnoremap <buffer> <localleader>3 yypVr~:redraw<cr>
+    au FileType rst set spell
 
 augroup end
 
