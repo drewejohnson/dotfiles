@@ -79,14 +79,15 @@ set statusline=%f%{FugitiveStatusline()}%m%r%h%w[%{&ff}]%y[%p%%][%l,%v]
 " }
 
 " navigate through split screens with normal navigation commands
-nnoremap <C-J> :wincmd j<CR>
-nnoremap <C-H> :wincmd h<CR>
-nnoremap <C-K> :wincmd k<CR>
-nnoremap <C-L> :wincmd l<CR>
-tnoremap <C-J> :wincmd j
-tnoremap <C-H> :wincmd h
-tnoremap <C-K> :wincmd k
-tnoremap <C-L> :wincmd l
+nnoremap <C-J> <C-W>j
+nnoremap <C-H> <C-W>h
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+tnoremap <C-J> <C-W>j
+tnoremap <C-H> <C-W>h
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
+
 
 "                                highlighting       {
 " spell check   {
