@@ -12,10 +12,17 @@ export VISUAL=vim
 export HISTCONTROL=ignoredups
 export BSTINPUTS=~/.latex
 
-
 [ -r ~/.bash_aliases ] && . ~/.bash_aliases
 [ -r ~/.bash_functions ] && . ~/.bash_functions
 [ -r ~/.bash_gt ] && . ~/.bash_gt
+
+# Autocompletion
+
+[ -r /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+[ -r /usr/share/bash-completion/completions/pip ] && . /usr/share/bash-completion/completions/pip
+[ -r /usr/share/bash-completion/completions/yay ] && . /usr/share/bash-completion/completions/yay
+[ -r /usr/share/bash-completion/completions/pacman ] && . /usr/share/bash-completion/completions/pacman
+[ -r /usr/share/bash-completion/completions/rubber ] && . /usr/share/bash-completion/completions/rubber
 
 #
 # Shell prompt
