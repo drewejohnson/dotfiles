@@ -10,7 +10,6 @@ export XDG_CONFIG_HOME=~/.config
 export EDITOR=vim
 export VISUAL=vim
 export HISTCONTROL=ignoredups
-export BSTINPUTS=~/.latex
 
 [ -r ~/.bash_aliases ] && . ~/.bash_aliases
 [ -r ~/.bash_functions ] && . ~/.bash_functions
