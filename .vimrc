@@ -156,7 +156,7 @@ augroup ft_latex
     au!
 
     " Build the document using rubber and generate a pdf
-    au FileType tex nnoremap <buffer> <localleader>1 :Dispatch rubber -d %<CR>
+    au FileType tex nnoremap <buffer> <localleader>q :Dispatch rubber -d %<CR>
     au BufEnter *.tex set spell
     au BufLeave *.tex set nospell
 
