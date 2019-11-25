@@ -1,0 +1,5 @@
+#!/bin/sh
+# Diff between two images with image magick
+# https://akikoskinen.info/image-diffs-with-git/
+
+compare $2 $1 png:- | montage -geometry +4+4 $2 - $1 png:- | feh -
