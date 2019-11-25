@@ -34,7 +34,7 @@ __ps1_c_yellow=""
 __ps1_c_reset=""
 
 case $TERM in 
-    screen-256color | st-256color)
+    screen-256color | st-256color | xterm-256color)
         __ps1_c_green="$(tput setaf 2)"
         __ps1_c_reset="$(tput sgr0)"
         __ps1_c_red="$(tput setaf 1)"
