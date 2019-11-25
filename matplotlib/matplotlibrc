@@ -7,6 +7,3 @@ mathtext.fontset : stix
 # Tight figures on save
 savefig.bbox : tight
 patch.edgecolor : None
-
-# backend
-backend: GTK3Agg
