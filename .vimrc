@@ -183,6 +183,9 @@ augroup ft_python
     au InsertEnter *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+\%#\@!$/
     au InsertLeave *.py syn clear BadWhitespace | syn match BadWhitespace excludenl /\s\+$/
 
+    au FileType python cnoreabbrev <expr> Pytest getcmdtype()==':' &&
+        \ getcmdline()=='Pytest' ? 'Dispatch COLUMNS=200 pytest' : 'Pytest'
+
 augroup end
 
 " }
