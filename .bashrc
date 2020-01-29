@@ -80,6 +80,8 @@ function __ps1_prompt_command {
 
     if [[ ! -z $VIRTUAL_ENV ]]; then
         __ps1_venv=${__ps1_c_green}\($(basename $VIRTUAL_ENV)\)${__ps1_c_reset}
+    elif [[ ! -z $CONDA_PREFIX ]]; then
+        __ps1_venv=${__ps1_c_green}\($(basename $CONDA_PREFIX)\)${__ps1_c_reset}
     else
         __ps1_venv=""
     fi
