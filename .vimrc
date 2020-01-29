@@ -158,20 +158,11 @@ augroup ft_latex
 
     " Build the document using rubber and generate a pdf
     au FileType tex nnoremap <buffer> <localleader>q :Dispatch rubber -d %<CR>
-    au BufEnter *.tex set spell
-    au BufLeave *.tex set nospell
 
 augroup end
 
 " }
 
-" Markdown {
-augroup ft_markdown
-    au!
-    au BufEnter *.md set spell
-    au BufLeave *.md set nospell
-augroup end
-" }
 
 " Python {
 augroup ft_python
@@ -195,8 +186,6 @@ augroup ft_rest
     au FileType rst nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
     au FileType rst nnoremap <buffer> <localleader>2 yypVr-:redraw<cr>
     au FileType rst nnoremap <buffer> <localleader>3 yypVr~:redraw<cr>
-    au BufEnter *.rst set spell
-    au BufLeave *.rst set nospell
 
 augroup end
 
