@@ -201,6 +201,12 @@ augroup end
 
 "}
 
+augroup ft_serpent
+    au!
+    au FileType serp nnoremap <buffer> <localleader>q :Dispatch sss2 %<CR>
+    au FileType serp nnoremap <buffer> <localleader>p :Dispatch sss2 -plot %<CR>
+augroup end
+
 "}
 
 " Colorscheme {
