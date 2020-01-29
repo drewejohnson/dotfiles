@@ -92,7 +92,7 @@ function __ps1_prompt_command {
         __ps1_job_mark=""
     fi
 
-    export PS1='${__ps1_venv}${__ps1_exit_mark}${__ps1_job_mark}[\u@\h \W] $(__ps1_git_branch) $(__ps1_git_dirty)\n\$ '
+    export PS1='${__ps1_exit_mark}${__ps1_venv}${__ps1_job_mark}[\u@\h \W] $(__ps1_git_branch) $(__ps1_git_dirty)\n\$ '
 }
 
 export PROMPT_COMMAND="__ps1_prompt_command"
