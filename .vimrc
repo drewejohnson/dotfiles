@@ -13,6 +13,7 @@ set showcmd
 set relativenumber
 set tags=./tags,./.git/tags,tags,.git/tags
 let fortran_free_source=1
+let g:netrw_winsize=-30
 syntax on
 
 " directories   {
