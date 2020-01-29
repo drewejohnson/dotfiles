@@ -97,6 +97,4 @@ function __ps1_prompt_command {
 
 export PROMPT_COMMAND="__ps1_prompt_command"
 
-# colors for ls
-source ~/.dir_colors
 PATH=$(pathcleanup)
