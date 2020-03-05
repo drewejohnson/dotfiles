@@ -6,6 +6,7 @@
 [init]
 	templatedir = ~/.git_template
 [pretty]
+    changelog = format:%C(auto,yellow)%H %C(auto,reset)%s
     whatis = format:%C(auto,bold blue)%ad%Creset %C(auto,yellow)%h %C(auto,green)%an%Creset %C(auto,white)%s
     summary = format:%C(auto,yellow)%h %C(auto,green)%an %C(auto,reset)%s
 [alias]
@@ -24,6 +25,8 @@
 
     # Checkout variants
     cb = checkout -b
+    # Changelog
+    changelog = log --pretty=changelog --no-merges
 
     # Run the flake8 on unified diff
     # Arguments are passed to git diff
@@ -34,8 +37,9 @@
     # Onelined log graph
     og = ol --graph
 
-    # short log / reflogs
-    # default to 20 items
+    # Short status
+    ss = status --short --branch --untracked-files=no
+    sa = status --short --branch --untracked-files=normal
     sal = al -n 20
     sag = ag -n 20
     sol = ol -n 20
@@ -43,6 +47,8 @@
 
     # Show author and title of single commit
     whatis = show -s --pretty=whatis --date=short
+
+    rekt = log --oneline --all --decorate --graph
 [diff "jupyternotebook"]
     command = git-nbdiffdriver diff
 [merge "jupyternotebook"]
