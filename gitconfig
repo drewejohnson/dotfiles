@@ -5,6 +5,9 @@
     program = gpg2
 [init]
 	templatedir = ~/.git_template
+[pretty]
+    whatis = format:%C(auto,bold blue)%ad%Creset %C(auto,yellow)%h %C(auto,green)%an%Creset %C(auto,white)%s
+    summary = format:%C(auto,yellow)%h %C(auto,green)%an %C(auto,reset)%s
 [alias]
     # More verbose onelined logs
     # Show all branches
@@ -27,7 +30,7 @@
     flake8 =  !.git/hooks/flake8
 
     # Pretty-fied one lined log
-    ol = log --oneline --pretty='tformat:%C(yellow)%h%Creset %Cgreen[%an]%Creset %s'
+    ol = log --pretty=summary
     # Onelined log graph
     og = ol --graph
 
@@ -39,7 +42,7 @@
     srl = reflog -n 20
 
     # Show author and title of single commit
-    whatis = show -s --pretty='tformat:%C(yellow)%h%Creset %an: (%s, %ad)' --date=short
+    whatis = show -s --pretty=whatis --date=short
 [diff "jupyternotebook"]
     command = git-nbdiffdriver diff
 [merge "jupyternotebook"]
