@@ -13,7 +13,6 @@
     # More verbose onelined logs
     # Show all branches
     al = log --oneline --all --decorate
-    ag = al --graph
 
     # Apply black formater to all tracked python files
     # No arguments
@@ -23,8 +22,6 @@
     # No arguments
     ctags = !.git/hooks/ctags
 
-    # Checkout variants
-    cb = checkout -b
     # Changelog
     changelog = log --pretty=changelog --no-merges
 
