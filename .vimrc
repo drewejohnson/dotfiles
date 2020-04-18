@@ -203,4 +203,4 @@ augroup end
 
 " Colorscheme {
 set background=dark
-colorscheme cosmic_latte
+colorscheme challenger_deep
