@@ -205,16 +205,16 @@ for_window [class="Nm-connection-editor"] floating enable
 #
 # Coloring
 #
-set_from_resource $bg i3wm.color0 #ff0000
-set_from_resource $focused i3wm.color10 #ffffff
-set_from_resource $unfcsed i3wm.color8 #0000ff
-set_from_resource $inactiv i3wm.color8 #ff00ff
-set_from_resource $indicat i3wm.color1 #ffff00
-set_from_resource $text    i3wm.color15 #000000
-set_from_resource $urgent  i3wm.color3 #ff0000
+set $bg #262626
+set $focused #5f5f87
+set $unfcsed #5f87d7
+set $inactiv #1c1c1c
+set $indicat #af5f5f
+set $text    #ffffff
+set $urgent  #af5f5f
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $focused $bg    $text   $indicat  $focused
+client.focused          $focused $focused    $text   $indicat  $focused
 client.focused_inactive $inactiv $bg    $text   $indicat  $inactiv
 client.unfocused        $unfcsed $bg    $text   $indicat  $unfcsed
 client.urgent           $urgent  $bg    $text   $indicat  $inactiv
@@ -243,9 +243,9 @@ bar {
         background #262626
         statusline #ffffff
 
-        focused_workspace #262626 #5f5f87 #ffffff
-        active_workspace  #262626 #5f87d7 #1c1c1c
-        inactive_workspace #262626 #1c1c1c #ffffff
-        urgent_workspace #af5f5f #af5f5f #ffffff
+        focused_workspace $bg $focused $text
+        active_workspace  $bg $unfcsed #1c1c1c
+        inactive_workspace $bg $inactive $text
+        urgent_workspace $bg $urgent $text
     }
 }
