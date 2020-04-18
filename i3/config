@@ -32,9 +32,6 @@ exec_always --no-startup-id bash ~/.config/i3/startup.sh
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id bash ~/.config/scripts/notify-bat.sh
 
-# Autolock
-exec --no-startup-id xautolock -time 5 -locker i3lock &
-
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn hack:pixelsize=14 -p  -sb #5f5f87"
 
 # lock the screen
