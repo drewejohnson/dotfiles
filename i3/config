@@ -35,8 +35,7 @@ exec_always --no-startup-id bash ~/.config/scripts/notify-bat.sh
 # Autolock
 exec --no-startup-id xautolock -time 5 -locker i3lock &
 
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "hack:pixelsize=14" -p "run " -sb "#5f5f87"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn hack:pixelsize=14 -p  -sb #5f5f87"
 
 # lock the screen
 bindsym $mod+x exec i3lock -c 708090
