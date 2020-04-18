@@ -174,6 +174,8 @@ augroup ft_python
     au FileType python nnoremap <buffer> <localleader>f :call Flake8()<CR>
     au FileType python cnoreabbrev <expr> Pytest getcmdtype()==':' &&
         \ getcmdline()=='Pytest' ? 'Dispatch COLUMNS=200 pytest' : 'Pytest'
+    au FileType python cnoreabbrev <expr> Black getcmdtype()==':' &&
+        \ getcmdline()=='Black' ? 'Dispatch black -q -l 79' : 'Black'
 
 augroup end
 
