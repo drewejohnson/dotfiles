@@ -40,10 +40,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'vim-scripts/SyntaxAttr.vim'
 " Turn off highlighting after a search
 " Colorscheme
-" Similar dark purple theme, but more minimal
-" better for non-256 terminals
-" Plugin 'axvr/photon.vim'
-Plugin 'nightsense/cosmic_latte'
+Plugin 'challenger-deep-theme/vim'
 
 call vundle#end()
 
